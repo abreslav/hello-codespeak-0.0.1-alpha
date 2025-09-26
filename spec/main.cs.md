@@ -39,11 +39,5 @@ Below: edit boxes for each field and an "Add" button.
 
 # Django Settings & Deployment
 
-Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS 
-- format: comma-sperarated
-
-Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS
-- format: comma-sperarated
-
-Read DATABASE configuration from an env variable $DATABASE_URL
+IMPORTANT: Read DATABASE configuration from an env variable $DATABASE_URL
 - format: use `dj_database_url` to parse

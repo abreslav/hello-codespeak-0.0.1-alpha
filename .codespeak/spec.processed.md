@@ -10,6 +10,7 @@ HelloWorld is a simple web app that displays a greeting.
 The app responds to routes:
  - /: the hello page
  - /status: the system status page
+ - /demo: the DB demo page
 
 # Hello Page
 
@@ -39,4 +40,7 @@ Below: edit boxes for each field and an "Add" button.
 # Django Settings & Deployment
 
 Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS 
-- format: a comma-sperarated
+- format: comma-sperarated
+
+Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS
+- format: comma-sperarated

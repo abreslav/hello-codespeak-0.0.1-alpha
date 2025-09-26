@@ -59,7 +59,7 @@
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
         "test_reports": "test_reports.txt",
-        "spec_diff": "--- +++ @@ -27,6 +27,15 @@ - CPU usage\n - Memory usage\n \n+# DB Demo page\n+\n+Use the Demo table in the DB with fields:\n+- name\n+- description\n+\n+A table displaying all records.\n+Below: edit boxes for each field and an \"Add\" button.\n+\n # Django Settings & Deployment\n \n Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n"
+        "spec_diff": "--- +++ @@ -10,6 +10,7 @@ The app responds to routes:\n  - /: the hello page\n  - /status: the system status page\n+ - /demo: the DB demo page\n \n # Hello Page\n \n@@ -39,4 +40,7 @@ # Django Settings & Deployment\n \n Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n-- format: a comma-sperarated+- format: comma-sperarated\n+\n+Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS\n+- format: comma-sperarated"
     },
     "phase_manager": {
         "history": [
@@ -306,6 +306,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"89886eda-61ea-48d8-9a0e-b1767b6bc88a\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T17:01:21.127999+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"89886eda-61ea-48d8-9a0e-b1767b6bc88a\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T17:01:21.169611+00:00"
             }
         ]
     }

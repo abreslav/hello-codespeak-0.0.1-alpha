@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Status - CodeSpeak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 to-teal-100 min-h-screen py-8">
+    <div class="container mx-auto px-4">
+        <div class="text-center animate-fade-in">
+            <!-- Header -->
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+                        System Status
+                    </span>
+                </h1>
+                <p class="text-lg text-gray-600">Real-time system information</p>
+            </div>
+
+            <!-- Status Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- OS Information Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-emerald-500">
+                    <div class="text-3xl mb-4 animate-pulse-slow">🖥️</div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Operating System</h2>
+                    <div class="space-y-2 text-left">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                            <span class="text-gray-600 font-medium">OS:</span>
+                            <span class="text-gray-800 font-mono">{{ status.os_name }}</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-gray-600 font-medium">Version:</span>
+                            <span class="text-gray-800 text-sm font-mono">{{ status.os_version|truncatechars:30 }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date/Time Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-teal-500">
+                    <div class="text-3xl mb-4 animate-pulse-slow">🕒</div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Current Time</h2>
+                    <div class="text-center">
+                        <div class="text-2xl font-mono text-gray-800 bg-gray-50 rounded-lg py-4 px-6">
+                            {{ status.current_datetime }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CPU Usage Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-blue-500">
+                    <div class="text-3xl mb-4 animate-pulse-slow">⚡</div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">CPU Usage</h2>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-600 mb-2">{{ status.cpu_usage }}%</div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full transition-all duration-500"
+                                 style="width: {{ status.cpu_usage }}%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Memory Usage Card -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-t-4 border-purple-500">
+                    <div class="text-3xl mb-4 animate-pulse-slow">💾</div>
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Memory Usage</h2>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">{{ status.memory_usage }}%</div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-3">
+                            <div class="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full transition-all duration-500"
+                                 style="width: {{ status.memory_usage }}%"></div>
+                        </div>
+                        <div class="text-sm text-gray-600 font-mono">
+                            {{ status.memory_used }} GB / {{ status.memory_total }} GB
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="mt-12">
+                <a href="/"
+                   class="inline-flex items-center bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-8">
+                <p class="text-sm text-gray-500">
+                    System information refreshed on page load
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

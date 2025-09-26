@@ -390,6 +390,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T18:37:09.268055+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:37:32.578079+00:00"
             }
         ]
     }

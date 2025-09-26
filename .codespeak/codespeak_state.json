@@ -55,11 +55,11 @@
             "web_application": true
         },
         "external_apis": "external_apis.json",
-        "commit_message": "Add environment variable support for configuration",
+        "commit_message": "Remove ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS env vars",
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
         "test_reports": "test_reports.txt",
-        "spec_diff": "--- +++ @@ -10,6 +10,7 @@ The app responds to routes:\n  - /: the hello page\n  - /status: the system status page\n+ - /demo: the DB demo page\n \n # Hello Page\n \n@@ -39,4 +40,10 @@ # Django Settings & Deployment\n \n Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n-- format: a comma-sperarated+- format: comma-sperarated\n+\n+Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS\n+- format: comma-sperarated\n+\n+Read DATABASE configuration from an env variable $DATABASE_URL\n+- format: use `dj_database_url` to parse"
+        "spec_diff": "--- +++ @@ -39,11 +39,5 @@ \n # Django Settings & Deployment\n \n-Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n-- format: comma-sperarated\n-\n-Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS\n-- format: comma-sperarated\n-\n-Read DATABASE configuration from an env variable $DATABASE_URL\n+IMPORTANT: Read DATABASE configuration from an env variable $DATABASE_URL\n - format: use `dj_database_url` to parse"
     },
     "phase_manager": {
         "history": [
@@ -350,6 +350,54 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"24edb298-7e4d-4282-a50d-42dc2f648f12\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T18:22:02.748902+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:11.574786+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:11.617233+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"EvaluateCriteria\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:26.671738+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeExternalApis\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:38.839086+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"CheckExternalApisConfigurationFile\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:38.859037+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"GenerateExternalApisConfigValidation\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:38.878849+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"SetupProject\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:40.332358+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"ImplementSpecWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:37:06.681864+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"FeedbackLoopWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:37:09.118926+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:37:09.268055+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:37:32.578079+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:37:32.596690+00:00"
             }
         ]
     }

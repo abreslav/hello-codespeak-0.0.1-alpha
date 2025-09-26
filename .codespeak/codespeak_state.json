@@ -50,16 +50,16 @@
             "has_node_js": false,
             "has_python": true,
             "has_server": true,
-            "has_sql_database": false,
+            "has_sql_database": true,
             "server": false,
             "web_application": true
         },
         "external_apis": "external_apis.json",
-        "commit_message": "Read ALLOWED_HOSTS from environment variable",
+        "commit_message": "Add DB Demo page with Demo model",
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
         "test_reports": "test_reports.txt",
-        "spec_diff": "--- +++ @@ -25,4 +25,9 @@ - OS name and version\n - Current date and time\n - CPU usage\n-- Memory usage+- Memory usage\n+\n+# Django Settings & Deployment\n+\n+Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n+- format: a comma-sperarated"
+        "spec_diff": "--- +++ @@ -27,6 +27,15 @@ - CPU usage\n - Memory usage\n \n+# DB Demo page\n+\n+Use the Demo table in the DB with fields:\n+- name\n+- description\n+\n+A table displaying all records.\n+Below: edit boxes for each field and an \"Add\" button.\n+\n # Django Settings & Deployment\n \n Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n"
     },
     "phase_manager": {
         "history": [
@@ -254,6 +254,54 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"3af308fa-1571-4795-b2a0-01bf2d80e334\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T15:38:35.464912+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:37:41.183618+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:37:41.226721+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"EvaluateCriteria\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:37:53.490712+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeExternalApis\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:38:18.822329+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"CheckExternalApisConfigurationFile\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:38:18.840597+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"GenerateExternalApisConfigValidation\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:38:18.858340+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"SetupProject\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:38:20.365346+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"ImplementSpecWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:42:07.977250+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"FeedbackLoopWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:42:09.465174+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:43:02.766201+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:44:40.685482+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:44:40.703518+00:00"
             }
         ]
     }

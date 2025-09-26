@@ -55,7 +55,9 @@
             "web_application": true
         },
         "external_apis": "external_apis.json",
-        "commit_message": "Implement Hello CodeSpeak Django web app"
+        "commit_message": "Implement Hello CodeSpeak Django web app",
+        "methods_to_test_raw": "methods_to_test_raw.json",
+        "methods_to_test": "methods_to_test.json"
     },
     "phase_manager": {
         "history": [
@@ -94,6 +96,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"FeedbackLoopWithClaudeCode\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T14:28:16.308696+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:28:25.964585+00:00"
             }
         ]
     }

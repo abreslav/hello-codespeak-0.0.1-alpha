@@ -58,7 +58,8 @@
         "commit_message": "Implement Hello CodeSpeak Django web app",
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
-        "test_reports": "test_reports.txt"
+        "test_reports": "test_reports.txt",
+        "spec_diff": "--- +++ @@ -11,4 +11,6 @@ \n # User Interface\n \n-A nice looking HTML page with the message: \"Hello from CodeSpeak!\"+A nice looking HTML page with the message: \"Hello from CodeSpeak!\"\n+- a button underneath the message saying \"Greet\"\n+  - on click, a JS alert dialog with the same message"
     },
     "phase_manager": {
         "history": [
@@ -113,6 +114,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"7dd366ce-beaa-4b5e-9733-6633f8bb734f\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T14:50:40.640884+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"7dd366ce-beaa-4b5e-9733-6633f8bb734f\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:50:40.693224+00:00"
             }
         ]
     }

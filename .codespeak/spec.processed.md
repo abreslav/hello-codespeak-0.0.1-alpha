@@ -26,3 +26,8 @@ Display system status information:
 - Current date and time
 - CPU usage
 - Memory usage
+
+# Django Settings & Deployment
+
+Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS 
+- format: a comma-sperarated

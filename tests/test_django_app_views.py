@@ -287,8 +287,8 @@ class DbDemoEndpointTestCase(TestCase):
         # Check that response contains expected HTML content
         content = response.content.decode('utf-8')
         self.assertIn('DB Demo', content)
-        self.assertIn('<title>DB Demo - CodeSpeak</title>', content)
-        self.assertIn('Interact with the database', content)
+        self.assertIn('<title>DB Demo - Hello CodeSpeak</title>', content)
+        self.assertIn('Manage demo records with our simple database interface', content)
 
     @pytest.mark.timeout(30)
     def test_db_demo_endpoint_post_request_valid_data(self):

@@ -166,11 +166,26 @@ class SystemStatusEndpointTestCase(TestCase):
         self.assertIn('⚡', content)
         self.assertIn('💾', content)
 
-        # Check that system data is populated in the template
-        self.assertIn('status.os_name', content)
-        self.assertIn('status.cpu_usage', content)
-        self.assertIn('status.memory_usage', content)
-        self.assertIn('status.current_datetime', content)
+        # Check that system data is populated in the rendered template
+        # The template variables should be replaced with actual values
+        # Check for actual system information patterns
+        import re
+
+        # Check for OS information (should contain Linux, Windows, or Darwin)
+        os_pattern = r'(Linux|Windows|Darwin|macOS)'
+        self.assertRegex(content, os_pattern)
+
+        # Check for CPU usage percentage (should be a number followed by %)
+        cpu_pattern = r'\d+\.?\d*%'
+        self.assertRegex(content, cpu_pattern)
+
+        # Check for memory information (should contain GB)
+        memory_pattern = r'\d+\.?\d* GB'
+        self.assertRegex(content, memory_pattern)
+
+        # Check for datetime format (YYYY-MM-DD HH:MM:SS)
+        datetime_pattern = r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}'
+        self.assertRegex(content, datetime_pattern)
 
     @pytest.mark.timeout(30)
     def test_system_status_endpoint_post_request(self):

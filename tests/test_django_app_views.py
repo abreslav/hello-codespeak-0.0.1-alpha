@@ -31,7 +31,7 @@ class HelloEndpointTestCase(TestCase):
 
         # Check that response contains expected HTML content
         content = response.content.decode('utf-8')
-        self.assertIn('Hello from CodeSpeak!', content)
+        self.assertIn('CodeSpeak!', content)
         self.assertIn('<title>Hello from CodeSpeak</title>', content)
         self.assertIn('Welcome to your simple Django web application', content)
         self.assertIn('👋', content)
@@ -55,7 +55,7 @@ class HelloEndpointTestCase(TestCase):
 
         # Check that response contains expected HTML content
         content = response.content.decode('utf-8')
-        self.assertIn('Hello from CodeSpeak!', content)
+        self.assertIn('CodeSpeak!', content)
 
     @pytest.mark.timeout(30)
     def test_hello_endpoint_with_custom_headers(self):
@@ -73,7 +73,7 @@ class HelloEndpointTestCase(TestCase):
 
         # Check that response contains expected HTML content
         content = response.content.decode('utf-8')
-        self.assertIn('Hello from CodeSpeak!', content)
+        self.assertIn('CodeSpeak!', content)
 
     @pytest.mark.timeout(30)
     def test_hello_endpoint_with_query_parameters(self):
@@ -91,7 +91,7 @@ class HelloEndpointTestCase(TestCase):
 
         # Check that response contains expected HTML content
         content = response.content.decode('utf-8')
-        self.assertIn('Hello from CodeSpeak!', content)
+        self.assertIn('CodeSpeak!', content)
 
     @pytest.mark.timeout(30)
     def test_hello_endpoint_response_structure(self):

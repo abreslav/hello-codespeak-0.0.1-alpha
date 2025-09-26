@@ -258,3 +258,170 @@ class SystemStatusEndpointTestCase(TestCase):
         # Check for navigation back to home
         self.assertIn('Back to Home', content)
         self.assertIn('href="/"', content)
+
+
+class DbDemoEndpointTestCase(TestCase):
+    """Test case for db_demo view endpoint tests."""
+
+    def setUp(self):
+        """Set up test client."""
+        self.client = Client()
+
+    @pytest.mark.timeout(30)
+    def test_db_demo_endpoint_get_request(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.db_demo
+
+        Test that GET request to db_demo endpoint returns correct response.
+        """
+        url = reverse('db_demo')
+        response = self.client.get(url)
+
+        # Check response status code
+        self.assertEqual(response.status_code, 200)
+
+        # Check response content type
+        self.assertEqual(response['content-type'], 'text/html; charset=utf-8')
+
+        # Check that response contains expected HTML content
+        content = response.content.decode('utf-8')
+        self.assertIn('DB Demo', content)
+        self.assertIn('<title>DB Demo - CodeSpeak</title>', content)
+        self.assertIn('Interact with the database', content)
+
+    @pytest.mark.timeout(30)
+    def test_db_demo_endpoint_post_request_valid_data(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.db_demo
+
+        Test that POST request to db_demo endpoint with valid data creates record and redirects.
+        """
+        from django_app.models import Demo
+
+        # Count initial records
+        initial_count = Demo.objects.count()
+
+        url = reverse('db_demo')
+        response = self.client.post(url, {
+            'name': 'Test Demo',
+            'description': 'Test description'
+        })
+
+        # Check redirect response
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.url, reverse('db_demo'))
+
+        # Check that record was created
+        self.assertEqual(Demo.objects.count(), initial_count + 1)
+
+        # Check that the record has correct data
+        demo = Demo.objects.filter(name='Test Demo').first()
+        self.assertIsNotNone(demo)
+        self.assertEqual(demo.name, 'Test Demo')
+        self.assertEqual(demo.description, 'Test description')
+
+    @pytest.mark.timeout(30)
+    def test_db_demo_endpoint_post_request_invalid_data(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.db_demo
+
+        Test that POST request to db_demo endpoint with invalid data shows error.
+        """
+        from django_app.models import Demo
+
+        # Count initial records
+        initial_count = Demo.objects.count()
+
+        url = reverse('db_demo')
+
+        # Test with missing name
+        response = self.client.post(url, {
+            'name': '',
+            'description': 'Test description'
+        })
+
+        # Check response status code (no redirect, shows form again)
+        self.assertEqual(response.status_code, 200)
+
+        # Check that no record was created
+        self.assertEqual(Demo.objects.count(), initial_count)
+
+        # Check error message appears
+        content = response.content.decode('utf-8')
+        self.assertIn('Both name and description are required', content)
+
+        # Test with missing description
+        response = self.client.post(url, {
+            'name': 'Test Demo',
+            'description': ''
+        })
+
+        # Check response status code (no redirect, shows form again)
+        self.assertEqual(response.status_code, 200)
+
+        # Check that no record was created
+        self.assertEqual(Demo.objects.count(), initial_count)
+
+    @pytest.mark.timeout(30)
+    def test_db_demo_endpoint_displays_existing_records(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.db_demo
+
+        Test that db_demo endpoint displays existing Demo records.
+        """
+        from django_app.models import Demo
+
+        # Create test records
+        demo1 = Demo.objects.create(name='Demo 1', description='Description 1')
+        demo2 = Demo.objects.create(name='Demo 2', description='Description 2')
+
+        url = reverse('db_demo')
+        response = self.client.get(url)
+
+        # Check response status code
+        self.assertEqual(response.status_code, 200)
+
+        # Check that records appear in response
+        content = response.content.decode('utf-8')
+        self.assertIn('Demo 1', content)
+        self.assertIn('Description 1', content)
+        self.assertIn('Demo 2', content)
+        self.assertIn('Description 2', content)
+
+    @pytest.mark.timeout(30)
+    def test_db_demo_endpoint_response_structure(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.db_demo
+
+        Test that db_demo endpoint returns properly structured HTML response.
+        """
+        url = reverse('db_demo')
+        response = self.client.get(url)
+
+        # Check response status code
+        self.assertEqual(response.status_code, 200)
+
+        # Check HTML structure
+        content = response.content.decode('utf-8')
+        self.assertIn('<!DOCTYPE html>', content)
+        self.assertIn('<html lang="en">', content)
+        self.assertIn('<head>', content)
+        self.assertIn('<body', content)
+        self.assertIn('</body>', content)
+        self.assertIn('</html>', content)
+
+        # Check for form elements
+        self.assertIn('<form', content)
+        self.assertIn('method="post"', content)
+        self.assertIn('name="name"', content)
+        self.assertIn('name="description"', content)
+        self.assertIn('type="submit"', content)
+
+        # Check for navigation back to home
+        self.assertIn('Back to Home', content)
+        self.assertIn('href="/"', content)

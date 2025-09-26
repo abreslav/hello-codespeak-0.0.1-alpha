@@ -57,7 +57,8 @@
         "external_apis": "external_apis.json",
         "commit_message": "Implement Hello CodeSpeak Django web app",
         "methods_to_test_raw": "methods_to_test_raw.json",
-        "methods_to_test": "methods_to_test.json"
+        "methods_to_test": "methods_to_test.json",
+        "test_reports": "test_reports.txt"
     },
     "phase_manager": {
         "history": [
@@ -100,6 +101,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T14:28:25.964585+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:31:02.339527+00:00"
             }
         ]
     }

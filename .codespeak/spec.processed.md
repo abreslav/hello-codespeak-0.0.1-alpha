@@ -27,6 +27,15 @@ Display system status information:
 - CPU usage
 - Memory usage
 
+# DB Demo page
+
+Use the Demo table in the DB with fields:
+- name
+- description
+
+A table displaying all records.
+Below: edit boxes for each field and an "Add" button.
+
 # Django Settings & Deployment
 
 Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS 

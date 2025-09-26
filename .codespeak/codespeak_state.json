@@ -59,7 +59,7 @@
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
         "test_reports": "test_reports.txt",
-        "spec_diff": "--- +++ @@ -25,4 +25,9 @@ - OS name and version\n - Current date and time\n - CPU usage\n-- Memory usage+- Memory usage\n+\n+# Django Settings & Deployment\n+\n+Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n+- format: a comma-sperarated"
+        "spec_diff": "--- +++ @@ -27,6 +27,15 @@ - CPU usage\n - Memory usage\n \n+# DB Demo page\n+\n+Use the Demo table in the DB with fields:\n+- name\n+- description\n+\n+A table displaying all records.\n+Below: edit boxes for each field and an \"Add\" button.\n+\n # Django Settings & Deployment\n \n Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n"
     },
     "phase_manager": {
         "history": [
@@ -258,6 +258,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T16:37:41.183618+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"9bd51eba-dd44-4564-afc0-0d0037ce2e88\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T16:37:41.226721+00:00"
             }
         ]
     }

@@ -23,6 +23,11 @@
             }
         }
     </script>
+    <script>
+        function showGreeting() {
+            alert("Hello from CodeSpeak!");
+        }
+    </script>
 </head>
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center">
     <div class="container mx-auto px-4">
@@ -46,6 +51,14 @@
                 <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                     Welcome to your simple Django web application
                 </p>
+
+                <!-- Greet Button -->
+                <button
+                    onclick="showGreeting()"
+                    class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 hover:shadow-xl mb-6"
+                >
+                    Greet
+                </button>
 
                 <!-- Decorative elements -->
                 <div class="flex justify-center space-x-2">

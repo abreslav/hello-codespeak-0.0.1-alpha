@@ -55,7 +55,7 @@
             "web_application": true
         },
         "external_apis": "external_apis.json",
-        "commit_message": "Add environment variable support for configuration",
+        "commit_message": "Remove ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS env vars",
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
         "test_reports": "test_reports.txt",
@@ -378,6 +378,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"SetupProject\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T18:36:40.332358+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"ImplementSpecWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:37:06.681864+00:00"
             }
         ]
     }

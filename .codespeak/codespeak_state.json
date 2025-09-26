@@ -45,6 +45,7 @@
         "criteria": {
             "console_application": false,
             "has_django": true,
+            "has_external_apis": false,
             "has_javascript": true,
             "has_node_js": false,
             "has_python": true,
@@ -361,6 +362,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"3e3cd40f-19d5-4d09-959c-ad23beb9f64d\",\"kind\":\"build\"},\"phase_id\":\"EvaluateCriteria\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T18:11:25.339105+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"3e3cd40f-19d5-4d09-959c-ad23beb9f64d\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeExternalApis\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:11:36.242158+00:00"
             }
         ]
     }

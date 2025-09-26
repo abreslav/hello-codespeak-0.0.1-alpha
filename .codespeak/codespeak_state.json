@@ -366,6 +366,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"bce4432a-09fa-454a-8c10-f10eb6e11aaf\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeExternalApis\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T17:57:33.428846+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bce4432a-09fa-454a-8c10-f10eb6e11aaf\",\"kind\":\"build\"},\"phase_id\":\"CheckExternalApisConfigurationFile\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T17:57:33.447261+00:00"
             }
         ]
     }

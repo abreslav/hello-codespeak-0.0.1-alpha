@@ -45,3 +45,5 @@ Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS
 Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS
 - format: comma-sperarated
 
+Use `dj_database_url` to load database configuration from the $DATABASE_URL environment variable if available.
+

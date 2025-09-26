@@ -1,0 +1,115 @@
+{
+    "meta": {
+        "schema": {
+            "spec": {
+                "type": "file",
+                "relative_path": "spec.processed.md",
+                "format": "text",
+                "by_phase": "ProcessSpec"
+            },
+            "external_apis": {
+                "type": "file",
+                "relative_path": "external_apis.json",
+                "format": "json",
+                "by_phase": "AnalyzeExternalApis"
+            },
+            "methods_to_test": {
+                "type": "file",
+                "relative_path": "methods_to_test.json",
+                "format": "json",
+                "by_phase": "AnalyzeAndPlanTests"
+            },
+            "methods_to_test_raw": {
+                "type": "file",
+                "relative_path": "methods_to_test_raw.json",
+                "format": "json",
+                "by_phase": "AnalyzeAndPlanTests"
+            },
+            "test_reports": {
+                "type": "file",
+                "relative_path": "test_reports.txt",
+                "format": "text",
+                "by_phase": "GenerateAndRunTests"
+            },
+            "sha_to_checkpoint": {
+                "type": "file",
+                "relative_path": "sha_to_checkpoint.json",
+                "format": "json"
+            }
+        },
+        "version": "0.2.0"
+    },
+    "phases_state": {
+        "spec_file": "spec/main.cs.md",
+        "spec": "spec.processed.md",
+        "criteria": {
+            "console_application": false,
+            "has_django": true,
+            "has_external_apis": false,
+            "has_javascript": false,
+            "has_node_js": false,
+            "has_python": true,
+            "has_server": true,
+            "has_sql_database": false,
+            "server": false,
+            "web_application": true
+        },
+        "external_apis": "external_apis.json",
+        "commit_message": "Implement Hello CodeSpeak Django web app",
+        "methods_to_test_raw": "methods_to_test_raw.json",
+        "methods_to_test": "methods_to_test.json",
+        "test_reports": "test_reports.txt"
+    },
+    "phase_manager": {
+        "history": [
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:26:00.692978+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:26:00.704792+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"EvaluateCriteria\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:26:12.487079+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeExternalApis\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:26:19.382781+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"CheckExternalApisConfigurationFile\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:26:19.398415+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"GenerateExternalApisConfigValidation\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:26:19.413189+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"SetupProject\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:26:23.225514+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"ImplementSpecWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:28:13.790448+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"FeedbackLoopWithClaudeCode\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:28:16.308696+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:28:25.964585+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:31:02.339527+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"976abce8-2658-4335-8a70-b8f00ebb1254\",\"kind\":\"build\"},\"phase_id\":\"Done\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T14:31:02.356215+00:00"
+            }
+        ]
+    }
+}

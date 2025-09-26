@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelloWorld - CodeSpeak</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center">
+    <div class="max-w-2xl mx-auto p-8">
+        <div class="bg-white rounded-2xl shadow-xl p-12 text-center transform hover:scale-105 transition-transform duration-300">
+            <div class="mb-8">
+                <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full mx-auto flex items-center justify-center mb-6">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Hello from
+                    <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                        CodeSpeak!
+                    </span>
+                </h1>
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    Welcome to your Django web application powered by CodeSpeak.
+                    This is your starting point for building amazing things.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <div class="bg-blue-50 rounded-lg p-4 flex-1">
+                    <div class="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-1">Framework</div>
+                    <div class="text-gray-800 font-medium">Django</div>
+                </div>
+                <div class="bg-indigo-50 rounded-lg p-4 flex-1">
+                    <div class="text-indigo-600 font-semibold text-sm uppercase tracking-wide mb-1">Styling</div>
+                    <div class="text-gray-800 font-medium">Tailwind CSS</div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gray-100">
+                <p class="text-sm text-gray-500">
+                    Ready to build something extraordinary? Let's get started!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

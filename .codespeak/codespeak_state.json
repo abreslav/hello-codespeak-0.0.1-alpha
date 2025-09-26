@@ -59,7 +59,7 @@
         "methods_to_test_raw": "methods_to_test_raw.json",
         "methods_to_test": "methods_to_test.json",
         "test_reports": "test_reports.txt",
-        "spec_diff": "--- +++ @@ -10,6 +10,7 @@ The app responds to routes:\n  - /: the hello page\n  - /status: the system status page\n+ - /demo: the DB demo page\n \n # Hello Page\n \n@@ -39,4 +40,10 @@ # Django Settings & Deployment\n \n Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n-- format: a comma-sperarated+- format: comma-sperarated\n+\n+Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS\n+- format: comma-sperarated\n+\n+Read DATABASE configuration from an env variable $DATABASE_URL\n+- format: use `dj_database_url` to parse"
+        "spec_diff": "--- +++ @@ -39,11 +39,5 @@ \n # Django Settings & Deployment\n \n-Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS \n-- format: comma-sperarated\n-\n-Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS\n-- format: comma-sperarated\n-\n-Read DATABASE configuration from an env variable $DATABASE_URL\n+IMPORTANT: Read DATABASE configuration from an env variable $DATABASE_URL\n - format: use `dj_database_url` to parse"
     },
     "phase_manager": {
         "history": [
@@ -354,6 +354,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"Init\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T18:36:11.574786+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"bd5d2230-7e8b-45d9-bf5a-5e6d03eb01d3\",\"kind\":\"build\"},\"phase_id\":\"ProcessSpec\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T18:36:11.617233+00:00"
             }
         ]
     }

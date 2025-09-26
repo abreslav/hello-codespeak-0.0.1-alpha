@@ -9,6 +9,13 @@
                 "method_name": "hello"
             },
             "kind": "endpoint_tests"
+        },
+        {
+            "method": {
+                "enclosing_classes": [],
+                "method_name": "system_status"
+            },
+            "kind": "endpoint_tests"
         }
     ],
     "django_proj/urls.py": []

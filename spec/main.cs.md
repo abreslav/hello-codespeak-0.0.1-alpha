@@ -40,4 +40,8 @@ Below: edit boxes for each field and an "Add" button.
 # Django Settings & Deployment
 
 Read ALLOWED_HOSTS from an env variable $ALLOWED_HOSTS 
-- format: a comma-sperarated
+- format: comma-sperarated
+
+Read CSRF_TRUSTED_ORIGINS from an env variable $CSRF_TRUSTED_ORIGINS
+- format: comma-sperarated
+

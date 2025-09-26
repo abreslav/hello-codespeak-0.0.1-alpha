@@ -246,6 +246,10 @@
             {
                 "checkpoint": "{\"run\":{\"id\":\"3af308fa-1571-4795-b2a0-01bf2d80e334\",\"kind\":\"build\"},\"phase_id\":\"AnalyzeAndPlanTests\",\"additional_id\":null}",
                 "timestamp": "2025-09-26T15:38:14.555899+00:00"
+            },
+            {
+                "checkpoint": "{\"run\":{\"id\":\"3af308fa-1571-4795-b2a0-01bf2d80e334\",\"kind\":\"build\"},\"phase_id\":\"GenerateAndRunTests\",\"additional_id\":null}",
+                "timestamp": "2025-09-26T15:38:35.448608+00:00"
             }
         ]
     }

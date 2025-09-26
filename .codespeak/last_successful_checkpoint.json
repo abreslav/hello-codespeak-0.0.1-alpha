@@ -1,1 +1,1 @@
-{"run":{"id":"d40ddd39-ea9e-462f-b0a7-38394a0b720a","kind":"build"},"phase_id":"AnalyzeExternalApis","additional_id":null}
+{"run":{"id":"d40ddd39-ea9e-462f-b0a7-38394a0b720a","kind":"build"},"phase_id":"CheckExternalApisConfigurationFile","additional_id":null}

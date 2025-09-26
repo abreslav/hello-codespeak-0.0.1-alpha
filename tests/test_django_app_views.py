@@ -122,3 +122,124 @@ class HelloEndpointTestCase(TestCase):
         # Check for main elements
         self.assertIn('<h1', content)
         self.assertIn('CodeSpeak', content)
+
+
+class SystemStatusEndpointTestCase(TestCase):
+    """Test case for system_status view endpoint tests."""
+
+    def setUp(self):
+        """Set up test client."""
+        self.client = Client()
+
+    @pytest.mark.timeout(30)
+    def test_system_status_endpoint_get_request(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.system_status
+
+        Test that GET request to system_status endpoint returns correct response.
+        """
+        url = reverse('system_status')
+        response = self.client.get(url)
+
+        # Check response status code
+        self.assertEqual(response.status_code, 200)
+
+        # Check response content type
+        self.assertEqual(response['content-type'], 'text/html; charset=utf-8')
+
+        # Check that response contains expected HTML content
+        content = response.content.decode('utf-8')
+        self.assertIn('System Status', content)
+        self.assertIn('<title>System Status - CodeSpeak</title>', content)
+        self.assertIn('Real-time system information', content)
+
+        # Check for system information sections
+        self.assertIn('Operating System', content)
+        self.assertIn('Current Time', content)
+        self.assertIn('CPU Usage', content)
+        self.assertIn('Memory Usage', content)
+
+        # Check for emoji icons
+        self.assertIn('🖥️', content)
+        self.assertIn('🕒', content)
+        self.assertIn('⚡', content)
+        self.assertIn('💾', content)
+
+        # Check that system data is populated in the template
+        self.assertIn('status.os_name', content)
+        self.assertIn('status.cpu_usage', content)
+        self.assertIn('status.memory_usage', content)
+        self.assertIn('status.current_datetime', content)
+
+    @pytest.mark.timeout(30)
+    def test_system_status_endpoint_post_request(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.system_status
+
+        Test that POST request to system_status endpoint returns correct response.
+        """
+        url = reverse('system_status')
+        response = self.client.post(url)
+
+        # Check response status code
+        self.assertEqual(response.status_code, 200)
+
+        # Check response content type
+        self.assertEqual(response['content-type'], 'text/html; charset=utf-8')
+
+        # Check that response contains expected HTML content
+        content = response.content.decode('utf-8')
+        self.assertIn('System Status', content)
+
+    @pytest.mark.timeout(30)
+    def test_system_status_endpoint_with_custom_headers(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.system_status
+
+        Test system_status endpoint with custom headers.
+        """
+        url = reverse('system_status')
+        response = self.client.get(url, HTTP_X_CUSTOM_HEADER='test-value')
+
+        # Check response status code
+        self.assertEqual(response.status_code, 200)
+
+        # Check that response contains expected HTML content
+        content = response.content.decode('utf-8')
+        self.assertIn('System Status', content)
+
+    @pytest.mark.timeout(30)
+    def test_system_status_endpoint_response_structure(self):
+        """
+        Test kind: endpoint_tests
+        Original method FQN: django_app.views.system_status
+
+        Test that system_status endpoint returns properly structured HTML response.
+        """
+        url = reverse('system_status')
+        response = self.client.get(url)
+
+        # Check response status code
+        self.assertEqual(response.status_code, 200)
+
+        # Check HTML structure
+        content = response.content.decode('utf-8')
+        self.assertIn('<!DOCTYPE html>', content)
+        self.assertIn('<html lang="en">', content)
+        self.assertIn('<head>', content)
+        self.assertIn('<body', content)
+        self.assertIn('</body>', content)
+        self.assertIn('</html>', content)
+
+        # Check for Tailwind CSS
+        self.assertIn('cdn.tailwindcss.com', content)
+
+        # Check for main grid structure
+        self.assertIn('grid-cols-1 md:grid-cols-2', content)
+
+        # Check for navigation back to home
+        self.assertIn('Back to Home', content)
+        self.assertIn('href="/"', content)
